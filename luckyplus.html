@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>LUCKYPLUS</title>
+<link rel="icon" type="image/x-icon" href="https://winsangalang.github.io/img/winsan.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: ;
+  font-size: 13px;
+  font-family: roboto, serif;
+  color: ;
+  background-color: #fff;  
+}
+a {
+            color: #000;
+            text-decoration: none;
+            display: ;
+            padding: ;
+            border-bottom: ;
+            font-family:;
+        }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}table
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+img {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.foot {
+            color: #333;
+            font-size: 10px;
+            text-decoration: none;
+            display: ;
+            padding: ;
+            border-bottom: ;
+            font-family: sans-serif;
+        }
+.menu-container {
+            position: relative;
+        }
+        .menu-button {
+            background-color: #333;
+            color: white;
+            padding: px px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 10%;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            width: 130px;
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+        }
+        .dropdown a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+.copy-button {
+            background: transparent;
+            color: #333;
+            border: none;
+            padding: px px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 13px;
+            margin: px;
+            position: relative;
+        }
+        .copy-button:hover {
+            background: transparent;
+        }
+        .tooltip {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .show-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+button {
+            background: transparent;
+            color: #333;
+            border: none;
+            padding: px px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 13px;
+            margin: px;
+            position: ;
+        }
+.message-box {
+            background: transparent;
+            color: red;
+            border: none;
+            width: 180px;
+            text-align: center;
+            font-size: 20px;
+            position: relative;
+        }
+.popbox {
+            background: #008CBA;
+            color: #fff;
+            border: 2px;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 13px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+            border-radius: 5px 5px 5px 5px;
+            margin: 10px;
+            position: relative;
+        }
+.popbox-data {
+            background: #fff;
+            color: #333;
+            border: 2px;
+            width: 80%;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 15px;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+            border-radius: 5px 5px 5px 5px;
+        }
+     </style>
+</head>
+<body>
+<input type="text" id="hiddenInput" style="position: absolute; left: -9999px;">
+
+    <script>
+        function copyToClipboard(button, text) {
+            let hiddenInput = document.getElementById("hiddenInput");
+            let tooltip = button.querySelector(".tooltip");
+
+            hiddenInput.value = text;
+            hiddenInput.select();
+            document.execCommand("copy");
+
+            // Show tooltip
+            tooltip.classList.add("show-tooltip");
+            setTimeout(() => {
+                tooltip.classList.remove("show-tooltip");
+            }, 1500); // Hide after 1.5 seconds
+        }
+    </script>
+<a href="https://www.casinoplus.com.ph/home" target="blank_"><img src="https://winsangalang.github.io/img/banner.png" alt="LUCKY PLUS"></a>
+<table>
+  <tr style="background-color: #333;color: #fff;">
+    <th><div class="menu-container">
+        <center><button class="menu-button" onclick="toggleMenu()">&#9776</button></center>
+        <div class="dropdown" id="dropdownMenu">
+            <a href="https://www.casinoplus.com.ph/home" target="_blank">Casinoplus</a>
+            <a href="https://www.okbet.com/mobile/login" target="_blank">Okbet</a>
+            <a href="https://www.playtime.ph/" target="_blank">Playtime</a>
+            <a href="https://bingoplus.com/" target="_blank">Bingoplus</a>
+            <a href="https://arenaplus.ph/" target="_blank">Arenaplus</a>
+            <a href="https://gzone.ph/#login" target="_blank">Gamezone</a>
+        </div>
+    </div></th>
+    <th>Name</th>
+    <th>Acc.Number</th>
+    <th>Withdraw</th>
+  </tr>
+ 
+  <tr>
+    <td><b>Main</b></td>
+    <td><button onclick="displayMessage('09267080720')">G720</button></td>
+    <td><button class="copy-button" onclick="copyToClipboard(this, '1051335380')">
+        1051335380
+        <span class="tooltip">Copied!</span>
+    </button></td>
+    <td>720 Gcash</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09267080720')">W720</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1056753542')">
+        1056753542
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>720 Maya</td>
+  </tr>
+   
+  <tr>
+    <td></td>
+    <td><button onclick="displayMessage('09107585402')">W402</button></td>
+    <td><button class="copy-button" onclick="copyToClipboard(this, '1056496262')">
+        1056496262
+        <span class="tooltip">Copied!</span>
+    </button></td>
+    <td>720 Gcash</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09771423029')">W029</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1056643930')">
+        1056643930
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>402 Gcash</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09943341952')">W952</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1052666654')">
+        1052666654
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>402 Gcash</td>
+  </tr>
+  
+  <tr>
+  <td><b>Tay</b></td>
+  <td><button onclick="displayMessage('09077397286')">G286</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1056594479')">
+        1056594479
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>286 Gcash</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09077397286')">W286</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1056726034')">
+        1056726034
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>286 Gcash</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09662233009')">W009</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1057487403')">
+        1057487403
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>720 Gcash</td>
+  </tr>
+  
+  <tr>
+  <td><b>Nay</b></td>
+  <td><button onclick="displayMessage('09156219970')">W970</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1056901068')">
+        1056901068
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>970 Maya</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09503865638')">W638</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '26179683')">
+        26179683
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>N/A</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09503865638')">G638</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '25563895')">
+        25563895
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>638 Gcash</td>
+  </tr>
+  
+ <tr>
+  <td><b>Meow</b></td>
+  <td><button onclick="displayMessage('09276992333')">W333</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1063671601')">
+        1063671601
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>N/A</td>
+  </tr>
+
+  <tr>
+  <td><b>Jr</b></td>
+  <td><button onclick="displayMessage('09122805073')">Conz..</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1041864227')">
+        1041864227
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>Unknown</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09560778416')">Sang..</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1057940420')">
+        1057940420
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>Unknown</td>
+  </tr>
+  
+  <tr>
+  <td><b>Vin</b></td>
+  <td><button onclick="displayMessage('09124101008')">Sherv..</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1056414558')">
+            1056414558
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>Unknown</td>
+  </tr>
+  
+  <tr>
+  <td></td>
+  <td><button onclick="displayMessage('09458548598')">Bulb..</button></td>
+  <td><button class="copy-button" onclick="copyToClipboard(this, '1057502052')">
+        1057502052
+        <span class="tooltip">Copied!</span>
+    </button></td>
+  <td>Unknown</td>
+  </tr>
+</table>
+
+<div class="box">
+<button class="popbox" popovertarget="modal">Collections</button>
+<div id="modal" class="popbox-data" popover>
+<h2>Collection List</h2>
+<p>
+<li>G720 *9</li>
+<li>W720 *1</li>
+<li>W402 </li>
+<li>W029 </li>
+<li>W952 </li>
+<li>G286 </li>
+<li>W286 </li>
+<li>W009 </li>
+<li>W638 </li>
+</p>
+<button class="popbox" popovertarget="modal">    Close</button>
+<span class="foot">Only use main accounts for withdrawal.</span>
+</div>
+</div>
+<center>
+<script>
+        function toggleMenu() {
+            var dropdown = document.getElementById("dropdownMenu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+        
+        document.addEventListener("click", function(event) {
+            var menu = document.querySelector(".menu-container");
+            if (!menu.contains(event.target)) {
+                document.getElementById("dropdownMenu").style.display = "none";
+            }
+        });
+    </script>
+<!-- property of sherwin Sangalang-->
+<center>
+<script>
+    function displayMessage(number) {
+        document.querySelector('.message-box').value = number;
+    }
+</script>
+<input type="text" class="message-box" placeholder="Sim number" onfocus="this.select()">
+</center>
+<br><br>
+</body>
+</html>
+
+
+
+
+
+
