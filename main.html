@@ -1,93 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .navbar {
-            background-color: #333;
-            overflow: ;
-            padding: 10px;
-            position: relative;
-            z-index: 2;
-        }
-        .navbar a {
-            color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 5px;
-        }
-        .navbar a:hover {
-            background-color: #575757;
-            border-radius: 5px;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-            border-radius: 5px;
-            z-index: 3;
-        }
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            display: block;
-        }
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-        .container {
-            margin: 20px;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 1;
-        }
-a {
-            color: #3285d0;
-            text-decoration: none;
-        }
-    </style>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+   <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <meta property="og:title" content="Slots & Live Casino" />
+    <meta property="og:description" content="Play your favourite slots game in a single website." />
+    <meta property="og:image" content="https://winsangalang.github.io/thumb/slots.jpg" />
+    <meta property="og:url" content="https://winsangalang.github.io/slots" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+
+  <title>Slots</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #d3d4de;
+    }
+
+    .menu-bar {
+      background-color: #f2f2f2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+ box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2),
+ -8px -8px 20px rgba(255, 255, 255, 0.6);
+    }
+
+    .menu-bar .dropdown {
+      position: relative;
+    }
+
+    .menu-bar a {
+      color: #333;
+      padding: 14px 12px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .menu-bar a:hover {
+      background-color: ;
+       color: #6e6e6e;
+       border-radius: 12px;
+     box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+     inset -2px -2px 5px rgba(255, 255, 255, 0.6);  
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f2f2f2;
+      min-width: 160px;
+      z-index: 1;
+      top: 46px;
+      border-radius: 12px;
+       border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .dropdown-content a {
+      padding: 12px 16px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .speed-dial {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .tile {
+      background-color: #f2f2f2;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.5rem;
+      transition: transform 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+ box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2),
+ -8px -8px 20px rgba(255, 255, 255, 0.6);
+    }
+
+    .tile:hover {
+      transform: scale(1.05);
+      box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+     inset -8px -8px 10px rgba(255, 255, 255, 0.6);
+    }
+
+    .tile img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.1rem;
+      border-radius: 10px;
+    }
+  
+    .tile span {
+      display: block;
+      font-size: 0.6rem;
+      color: #333;
+    }
+    
+    .tile-dark {
+      background-color: #f2f2f2;
+      border-radius: 12px;
+      text-align: center;
+      text-decoration: none;
+      padding: 0.5rem;
+      transition: transform 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+ box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2),
+ -8px -8px 20px rgba(255, 255, 255, 0.6);
+    }
+
+    .tile-dark:hover {
+      transform: scale(1.05);
+      box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+     inset -8px -8px 10px rgba(255, 255, 255, 0.6);
+    }
+
+    .tile-dark img {
+      background-color: #333;
+      width: 50px;
+      height: 50px;
+      margin-bottom: 0.1rem;
+      border-radius: 10px;
+    }
+  
+    .tile-dark span {
+      display: block;
+      font-size: 0.6rem;
+      color: #333;
+    }
+    
+   .foot {
+      display: block;
+      font-size: 0.8rem;
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+    }
+    
+    img {
+      width: 60%;
+      max-width: 300px;
+      margin-bottom: 30px;
+    }
+
+    input[type="text"] {
+      width: 60%;
+      max-width: 500px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #f1f1f1;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+ box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2),
+ -8px -8px 20px rgba(255, 255, 255, 0.6);
+      border-radius: 24px;
+      outline: none;
+      
+      
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 10px 20px;
+      color: #6e6e6e;
+      font-weight: bold;
+      font-size: 16px;
+      background-color: #f2f2f2;
+      border: 1px solid #dcdcdc;
+      border-radius: 24px;
+      cursor: pointer;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+ box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.2),
+ -8px -8px 20px rgba(255, 255, 255, 0.6);
+    }
+
+    input[type="submit"]:hover {
+      color: #6e6e6e;
+      background-color: ;
+      transform: scale(1.05);
+      box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.2),
+     inset -8px -8px 10px rgba(255, 255, 255, 0.6);
+   }
+    }
+
+  </style>
+  <script>
+    function checkPassword(event) {
+      event.preventDefault(); // prevent default link behavior
+      const password = prompt("Enter password:");
+      if (password === ".") {
+        window.location.href = event.currentTarget.href;
+      } else {
+        alert("Incorrect password!");
+      }
+    }
+  </script>
+<!-- -->
+  <!-- <script>
+    window.onload = function() {
+      window.location.href = 'disabled';
+    };
+  </script> -->
 </head>
 <body>
-    <div class="navbar">
-        <a href="index">Home</a>
-        <a href="x">About</a>
-        <div class="dropdown">
-            <a href="#">Services</a>
-            <div class="dropdown-content">
-                <a href="https://github.com/dashboard" target="blank_">Github</a>
-                <a href="#marketing">Marketing</a>
-            </div>
-        </div>
-        <a href="https://www.facebook.com/" target="blank_">Contact</a>
+  <div class="menu-bar">
+    <div class="dropdown">
+      <a href="#" >Menu</a>
+      <div class="dropdown-content">
+        <a href="https://winsangalang.github.io/mylinks">MyLinks</a>
+        <a href="https://winsangalang.github.io/myfinds">MyFinds</a>
+        <a href="https://winsangalang.github.io/fsbot">FSBot</a>
+        <a href="https://winsangalang.github.io/files" target="_blank" onclick="checkPassword(event)">Files</a>
+        <a href="https://winsangalang.github.io/xx" target="_blank" onclick="checkPassword(event)">About</a>
+        
+      </div>
     </div>
+    <div class="dropdown">
+      <a href="#">More</a>
+      <div class="dropdown-content">
+       <a href="https://helpslot.win/helpSlot" target="_blank">HelpSlot</a>
+<a href="https://winsangalang.github.io/luckyplus">Luckyplus</a>
+       <a href="https://github.com/" target="_blank">GitHub</a>
+       
+      </div>
+    </div>
+</div>
+  <br>
+  <center>
+  <form action="https://www.google.com/search" method="GET">
+    <input type="text" name="q" placeholder="Google Search">
+    <input type="submit" value="GO">
+  </form>
+  </center>
+  <br>
+
+  <div class="speed-dial">
+        <a href="x" class="tile">
+      <img src="favicon.ico"/>
+      <span>Records-00</span>
+        </a>
     
-    <div class="container">
-        <h2>Contents</h2>
-        <p>Pages
-        <li><a href="x" target="blank_">Records 00</a></li>
-         <li><a href="x/01" target="blank_">Records 01</a></li>
-        </p>
-    </div>
+    <a href="x/01" class="tile" target="_blank">
+      <img src="favicon.ico" alt="" />
+      <span>Records-01</span>
+    </a>  
+     
+    
+ </div>
+
+  <a href="https://sabo11387.github.io" class="foot" target="_blank">sabo11387.github.io
+    </a>
+<br>
+  <span style="font-size: 10px;color: gray;">Note: For personal use only.</span>
+<br>
+    
+
 </body>
 </html>
