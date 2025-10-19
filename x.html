@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <title>RECORDS</title>
-<link rel="icon" type="image/x-icon" href="https://winsangalang.github.io/img/winsan.ico">
+<link rel="icon" type="image/x-icon" href="https://winsangalang.github.io/favicon.ico">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -392,6 +392,7 @@ input.box2 {
     </div></div>
     <div class="menu" id="menu">
     <a id="sleakLink" href="https://stream-leak.com" onclick="toggleMenu()" target="_blank">Stream-leak</a>
+    <a id="scripsLink" href="https://www.showcamrips.com/" onclick="toggleMenu()" target="_blank">Showcamrips</a>
     <a id="cambroLink" href="https://www.cambro.tv" onclick="toggleMenu()" target="_blank">Cambro</a>
     <a id="cwbLink" href="https://www.camwhoresbay.com" onclick="toggleMenu()" target="_blank">Camwhoresbay</a>
     <a id="cwLink" href="https://www.camwhoreshd.com" onclick="toggleMenu()" target="_blank">Camwhoreshd</a>
@@ -413,7 +414,7 @@ input.box2 {
         }
     </script>
 <div class="topnav">
-    <a href="https://linktr.ee/win11387" target="_blank">Linktr.ee</a> <a href="https://recu.me/type:recent/gender:female/ethnicity:all/age:young/body:all" target="_blank">Latest</a> <a id="chatLink" href="https://m.chaturbate.com/female-cams/" target="_blank">Room</a> <a id="googleLink" href="https://www.google.com" target="_blank">Google</a>
+    <a href="https://winsangalang.github.io" target="_blank">Home</a> <a href="https://recu.me/type:recent/gender:female/ethnicity:all/age:young/body:all" target="_blank">Latest</a> <a id="chatLink" href="https://m.chaturbate.com/female-cams/" target="_blank">Room</a> <a id="googleLink" href="https://www.google.com" target="_blank">Google</a>
     </div>
   
   
@@ -484,6 +485,7 @@ input.box2 {
       }
       
       var sleakLink = "https://stream-leak.com/search/" + name + "/";
+      var scripsLink = "https://www.showcamrips.com/model/en/" + name + "/";
       var nameLink = "https://recu.me/performer/" + name + "/latest";
       var googleLink = "https://www.google.com/m?q=" + name + "+porn";
       var cambroLink = "https://www.cambro.tv/search/" + name + "/";
@@ -506,6 +508,7 @@ document.getElementById('xhaLink').href = xhaLink;
 document.getElementById('rtLink').href = rtLink;
 document.getElementById('sbLink').href = sbLink;
 document.getElementById('chatLink').href = chatLink;
+document.getElementById('scripsLink').href = scripsLink;
     }
   </script>
   <script type="text/javascript">
@@ -565,81 +568,87 @@ document.getElementById('chatLink').href = chatLink;
   <br><br>
 </div>
 
-<script src="https://winsangalang.github.io/js/models.js"></script>
+<script src="https://winsangalang.github.io/js/models.js">
+</script>
 
     <div id="" class="temp"> 
     <h2>Quick list</h2>
        
-    <div id="profileLinks" class="profileLinks"></div></p><br><br><br>
+<div id="profileLinks" class="profileLinks"></div><br><br><br>
 
-    <script>
-        document.getElementById('profileForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const link = document.getElementById('link').value;
+<script>
+    document.getElementById('profileForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const link = document.getElementById('link').value;
 
-            if (name && link) {
-                const profile = { name, link };
-                let profiles = JSON.parse(localStorage.getItem('profiles')) || [];
-                profiles.push(profile);
-                localStorage.setItem('profiles', JSON.stringify(profiles));
-                displayProfiles();
-                document.getElementById('profileForm').reset();
-            }
-        });
-
-        function displayProfiles() {
-            const profileLinksDiv = document.getElementById('profileLinks');
-            profileLinksDiv.innerHTML = '';
-            const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
-            profiles.forEach((profile, index) => {
-                const profileLinkDiv = document.createElement('div');
-                profileLinkDiv.className = 'profile-link';
-                profileLinkDiv.innerHTML = `
-                    <a href="${profile.link}${profile.name}/latest" target="_blank">${profile.name}</a>
-                    <input type="hidden" onclick="editProfile(${index})" class="edt"></input>
-                    <button onclick="deleteProfile(${index})" class="edt">❌</button>
-                    <form id="editForm${index}" class="edit-form">
-                        <input type="text" id="editName${index}" value="${profile.name}" class="box2" autocomplete="off" required>
-                        <input type="" id="editLink${index}" value="${profile.link}${profile.name}/latest" autocomplete="off" class="box2" required>
-                        <button type="submit"  class="sav" >💾</button>
-                    </form>
-                `;
-                profileLinksDiv.appendChild(profileLinkDiv);
-
-                document.getElementById(`editForm${index}`).addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    updateProfile(index);
-                });
-            });
-        }
-
-        function editProfile(index) {
-            const editForm = document.getElementById(`editForm${index}`);
-            editForm.style.display = 'block';
-        }
-
-        function updateProfile(index) {
-            const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
-            const name = document.getElementById(`editName${index}`).value;
-            const link = document.getElementById(`editLink${index}`).value;
-
-            profiles[index] = { name, link };
-            localStorage.setItem('profiles', JSON.stringify(profiles));
-            displayProfiles();
-        }
-
-        function deleteProfile(index) {
+        if (name && link) {
+            const profile = { name, link };
             let profiles = JSON.parse(localStorage.getItem('profiles')) || [];
-            profiles.splice(index, 1);
+            profiles.push(profile);
             localStorage.setItem('profiles', JSON.stringify(profiles));
             displayProfiles();
+            document.getElementById('profileForm').reset();
         }
+    });
 
-        window.onload = function() {
-            displayProfiles();
-        };
-    </script></div>
+    function displayProfiles() {
+        const profileLinksDiv = document.getElementById('profileLinks');
+        profileLinksDiv.innerHTML = '';
+        let profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+        
+        // Limit to the last 40 profiles
+        profiles = profiles.slice(-40);
+
+        profiles.forEach((profile, index) => {
+            const profileLinkDiv = document.createElement('div');
+            profileLinkDiv.className = 'profile-link';
+            profileLinkDiv.innerHTML = `
+                🔹<a href="${profile.link}${profile.name}/latest" target="_blank">${profile.name}</a>
+                <input type="hidden" onclick="editProfile(${index})" class="edt"></input>
+                <input type="hidden" onclick="deleteProfile(${index})" class="edt"></button>
+                <form id="editForm${index}" class="edit-form">
+                    <input type="text" id="editName${index}" value="${profile.name}" class="box2" autocomplete="off" required>
+                    <input type="text" id="editLink${index}" value="${profile.link}${profile.name}/latest" autocomplete="off" class="box2" required>
+                    <button type="submit" class="sav">💾</button>
+                </form>
+            `;
+            profileLinksDiv.appendChild(profileLinkDiv);
+
+            document.getElementById(`editForm${index}`).addEventListener('submit', function(e) {
+                e.preventDefault();
+                updateProfile(index);
+            });
+        });
+    }
+
+    function editProfile(index) {
+        const editForm = document.getElementById(`editForm${index}`);
+        editForm.style.display = 'block';
+    }
+
+    function updateProfile(index) {
+        const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+        const name = document.getElementById(`editName${index}`).value;
+        const link = document.getElementById(`editLink${index}`).value;
+
+        profiles[index] = { name, link };
+        localStorage.setItem('profiles', JSON.stringify(profiles));
+        displayProfiles();
+    }
+
+    function deleteProfile(index) {
+        let profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+        profiles.splice(index, 1);
+        localStorage.setItem('profiles', JSON.stringify(profiles));
+        displayProfiles();
+    }
+
+    window.onload = function() {
+        displayProfiles();
+    };
+</script>
+</div>
     <p><br>
  <div class="foot">• 2025 •</div>
  </p>
