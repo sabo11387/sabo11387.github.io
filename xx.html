@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>RECORDS</title>
+<link rel="icon" type="image/x-icon" href="https://winsangalang.github.io/favicon.ico">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Header + Navigation */
+.topbar {
+  background: #333;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 15px;
+}
+
+.topbar h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.topbar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.topbar button div {
+  width: 22px;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background: #333;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+}
+
+.menu.active {
+  display: block;
+}
+
+.menu a {
+  color: #fff;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  border-bottom: 1px solid #444;
+  font-size: 14px;
+}
+
+.menu a:hover {
+  background: #f2f2f2;
+  color: #333;
+}
+
+/* Clock */
+.clock {
+  text-align: center;
+  margin: 20px auto;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.clock .time { font-size: 1.6em; }
+.clock .date { font-size: 1em; color: #555; }
+.clock .day { font-size: 0.9em; color: #888; }
+
+/* Search */
+form {
+  text-align: center;
+  margin: 20px auto;
+}
+
+input.box {
+  width: 160px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+button.sav, input.btn {
+  padding: 8px 10px;
+  margin-left: 5px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}
+button.sav:hover, input.btn:hover {
+  background: #555;
+}
+
+/* Tabs */
+.tab {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+}
+.tab button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+.tab button.active, .tab button:hover {
+  color: #f97300;
+}
+
+/* Tab content */
+.tabcontent {
+  display: none;
+  padding: 10px 15px;
+  background: #fff;
+  margin: 10px auto;
+  border-radius: 10px;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* History */
+.temp {
+  text-align: center;
+  background: #fff;
+  margin: 15px auto;
+  padding: 10px;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+#profileLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+.profile-link {
+  display: inline-block;
+  font-size: 14px;
+  background: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: 0.2s ease;
+}
+
+.profile-link:hover {
+  background: #f97300;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.profile-link a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* Footer */
+.foot {
+  text-align: center;
+  padding: 10px;
+  font-size: 11px;
+  color: #aaa;
+}
+.tabcontent a {
+  float: center;
+  display: inline;
+  color: #333;
+  text-align: center;
+  padding: 0px 0px;
+  text-decoration: none;
+  font-family: roboto;
+  font-size: 13px;
+  }
+.tabcontent a:before {
+    content:"🔸";
+}
+/* Change color on hover */
+.tabcontent a:hover {
+  background-color: ;
+  color: orange;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <h2 id="nameHeader">Rec💕rds</h2>
+  <button onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </button>
+</div>
+
+<div class="menu" id="menu">
+  <a id="sleakLink" href="https://stream-leak.com" target="_blank">Stream-leak</a>
+  <a id="scripsLink" href="https://www.showcamrips.com/" target="_blank">Showcamrips</a>
+  <a id="cambroLink" href="https://www.cambro.tv" target="_blank">Cambro</a>
+  <a id="cwbLink" href="https://www.camwhoresbay.com" target="_blank">Camwhoresbay</a>
+  <a id="cwLink" href="https://www.camwhoreshd.com" target="_blank">Camwhoreshd</a>
+  <a id="chLink" href="http://www.camhub.cc" target="_blank">Camhub</a>
+  <a id="xhaLink" href="https://xhomealone.com" target="_blank">Xhomealone</a>
+  <a id="rtLink" href="https://rec-tube.com" target="_blank">Rec-tube</a>
+  <a id="sbLink" href="https://spankbang.com" target="_blank">Spankbang</a>
+  <a href="#" onclick="toggleMenu()">Close</a>
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+<div class="clock">
+  <div class="time" id="time"></div>
+  <div class="date" id="date"></div>
+  <div class="day" id="day"></div>
+</div>
+
+<script>
+function updateTime() {
+  const now = new Date();
+  const time = now.toLocaleTimeString();
+  const date = now.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
+  const day = now.toLocaleDateString(undefined, { weekday: 'long' });
+  document.getElementById('time').textContent = time;
+  document.getElementById('date').textContent = date;
+  document.getElementById('day').textContent = day;
+}
+setInterval(updateTime, 1000);
+updateTime();
+</script>
+
+<form id="profileForm">
+  <input type="text" id="name" class="box" placeholder="Enter name" autocomplete="off" required>
+  <input type="hidden" id="link" value="https://recu.me/performer/">
+  <button type="submit" class="sav">💦</button>
+  <input type="button" value="🔍" class="btn" onclick="doSearch(document.getElementById('name').value)">
+</form>
+
+<script>
+function doSearch(text){ if(window.find) window.find(text); }
+</script>
+
+<script>
+function displayGreeting() {
+  const name = document.getElementById('name').value || "Rec💞rds";
+  const sites = {
+    sleakLink: "https://stream-leak.com/search/" + name + "/",
+    scripsLink: "https://www.showcamrips.com/model/en/" + name + "/",
+    cambroLink: "https://www.cambro.tv/search/" + name + "/",
+    cwbLink: "https://www.camwhoresbay.com/search/" + name + "/",
+    cwLink: "https://www.camwhoreshd.com/search/" + name + "/",
+    chLink: "http://www.camhub.cc/search/" + name + "/",
+    xhaLink: "https://xhomealone.com/search/" + name + "/",
+    rtLink: "https://rec-tube.com/search/" + name + "/",
+    sbLink: "https://spankbang.com/s/" + name + "/"
+  };
+  for (const id in sites) document.getElementById(id).href = sites[id];
+  document.getElementById('nameHeader').innerText = name;
+}
+</script>
+
+<div class="temp">
+  <h3>Search History</h3>
+  <div id="profileLinks"></div>
+</div>
+
+<div class="tab">
+  <button class="tablinks active" onclick="openTab(event, 'Tab1')">Home</button>
+  <button class="tablinks" onclick="openTab(event, 'Tab2')">Top</button>
+  <button class="tablinks" onclick="openTab(event, 'Tab3')">18+</button>
+  <button class="tablinks" onclick="openTab(event, 'Tab4')">Hot</button>
+</div>
+
+<div id="Tab1" class="tabcontent" style="display:block;"></div>
+<div id="Tab2" class="tabcontent"><h3>Top List</h3><div id="linksTop"></div></div>
+<div id="Tab3" class="tabcontent"><h3>Teens</h3><div id="links18"></div></div>
+<div id="Tab4" class="tabcontent"><h3>Hot Girls</h3><div id="linksHot"></div></div>
+
+<script>
+function openTab(evt, tabName) {
+  const tabs = document.getElementsByClassName("tabcontent");
+  for (let i=0; i<tabs.length; i++) tabs[i].style.display="none";
+  const links = document.getElementsByClassName("tablinks");
+  for (let i=0; i<links.length; i++) links[i].classList.remove("active");
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+</script>
+
+
+
+<script src="https://winsangalang.github.io/js/models.js">
+</script>
+
+<script>
+document.getElementById('profileForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const link = document.getElementById('link').value;
+  if (!name) return;
+  let profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+  profiles.push({ name, link });
+  localStorage.setItem('profiles', JSON.stringify(profiles.slice(-40)));
+  displayProfiles();
+  displayGreeting();
+  e.target.reset();
+});
+
+function displayProfiles() {
+  const div = document.getElementById('profileLinks');
+  div.innerHTML = '';
+  const profiles = JSON.parse(localStorage.getItem('profiles')) || [];
+  profiles.forEach(p => {
+    const el = document.createElement('div');
+    el.className = 'profile-link';
+    el.innerHTML = `🔹 <a href="${p.link}${p.name}/latest" target="_blank">${p.name}</a>`;
+    div.appendChild(el);
+  });
+}
+window.onload = displayProfiles;
+</script>
+
+<div class="foot">• 2025 •</div>
+
+</body>
+</html>
